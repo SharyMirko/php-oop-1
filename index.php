@@ -4,33 +4,33 @@
         private $genere;
         private $lingua;
 
-        function __construct($_titolo, $_genere, $_lingua){
+        public function __construct($_titolo, $_genere, $_lingua){
             $this->titolo = $_titolo;
             $this->genere = $_genere;
             $this->lingua = $_lingua;
         }
 
-        function setTitolo($_titolo){
+        public function setTitolo($_titolo){
             $this->titolo = $_titolo;
         }
 
-        function setLingua($_lang){
+        public function setLingua($_lang){
             $this->lingua = $_lingua;
         }
 
-        function setGenere($_genere){
+        public function setGenere($_genere){
             $this->genere = $_genere;
         }
 
-        function getTitolo(){
+        public function getTitolo(){
             return $this->titolo;
         }
 
-        function getGenere(){
+        public function getGenere(){
             return $this->genere;
         }
 
-        function getLingua(){
+        public function getLingua(){
             return $this->lingua;
         }
     }
@@ -47,19 +47,20 @@
 </head>
 <body>
 
-<?php
+<?php 
     $lista = [];
-    array_push($lista,  new Movie('Bastardi senza gloria', 'Azione', 'ITA'));
-    array_push($lista,  new Movie('Back to the future', 'Fantasy', 'ENG'));
-    array_push($lista,  new Movie('Troy', 'Realismo', 'ITA'));
+    $lista[] = new Film('Bastardi senza gloria', 'Azione', 'ITA');
+    $lista[] = new Film('Back to the future', 'Fantasy', 'ENG');
+    $lista[] = new Film('Troy', 'Realismo', 'ITA');
 
-    foreach($list as $film){
+
+    foreach($lista as $film){
         echo "<dl>";
         echo "<dt>Titolo:".$film->getTitolo()."</dt>";
         echo "<dd>Genere:".$film->getGenere()."</dd>";
         echo "<dd>Language:".$film->getLingua()."</dd>";
         echo "</dl>";
-    }
+    } 
 ?>
 
 </body>
